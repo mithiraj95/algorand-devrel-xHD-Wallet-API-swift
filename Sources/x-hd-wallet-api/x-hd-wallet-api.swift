@@ -21,6 +21,7 @@ import Foundation
 import JSONSchema
 import MessagePack
 import Sodium
+import AlgoSDK
 
 public enum KeyContext: UInt32 {
     case Address = 0
@@ -522,5 +523,20 @@ public class XHDWalletAPI {
         let sharedSecret = SodiumHelper.cryptoGenericHash(input: concatenated, outputLength: sharedSecretHashBufferSize)
 
         return sharedSecret
+    }
+    
+    public func algoGenerateSecretKey() -> String {
+       return AlgoSDK.AlgoSdkGenerateSK()?.base64EncodedString() ?? ""
+    }
+
+    public func generateAddressFromSK(secretKey: String) -> String {
+        guard
+            !secretKey.isEmpty,
+            let data = Data(base64Encoded: secretKey)
+        else {
+            return ""
+        }
+        
+        return AlgoSDK.AlgoSdkGenerateAddressFromSK(data, nil)
     }
 }

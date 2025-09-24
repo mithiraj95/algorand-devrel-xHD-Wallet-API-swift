@@ -27,9 +27,14 @@ let package = Package(
         .package(url: "https://github.com/norio-nomura/Base32.git", from: "0.9.0"),
     ],
     targets: [
+        .binaryTarget(
+                   name: "AlgoSDK",
+                   path: "Frameworks/AlgoSDK.xcframework"
+               ),
         .target(
             name: "x-hd-wallet-api",
             dependencies: [
+                "AlgoSDK",
                 .product(name: "BigInt", package: "BigInt"),
                 .product(name: "JSONSchema", package: "JSONSchema.swift"),
                 .product(name: "MessagePack", package: "MessagePack.swift"),
