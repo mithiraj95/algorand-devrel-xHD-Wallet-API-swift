@@ -539,4 +539,5 @@ public class XHDWalletAPI {
         
         return AlgoSDK.AlgoSdkGenerateAddressFromSK(data, nil)
     }
+    
 }
