@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class HelloTest {
+@objcMembers public class HelloTest {
     
     public func getHelloTest() -> String {
         

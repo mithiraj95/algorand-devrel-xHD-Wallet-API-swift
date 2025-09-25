@@ -536,6 +536,7 @@ public class XHDWalletAPI {
         else {
             return ""
         }
+        HelloTest().getHelloTest()
         
         return AlgoSDK.AlgoSdkGenerateAddressFromSK(data, nil)
     }
