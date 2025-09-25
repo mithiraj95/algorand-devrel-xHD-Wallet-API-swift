@@ -9,7 +9,7 @@ import Foundation
 
 @objcMembers public class HelloTest {
     
-    public func getHelloTest() -> String {
+    public static func getHelloTest() -> String {
         
     return "Hello"
         
