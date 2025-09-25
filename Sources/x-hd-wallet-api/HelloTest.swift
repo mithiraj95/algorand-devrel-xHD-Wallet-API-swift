@@ -6,12 +6,19 @@
 //
 
 import Foundation
+import AlgoSDK
+
 
 @objcMembers public class HelloTest {
     
     public static func getHelloTest() -> String {
         
-    return "Hello"
+        return "Hello"
         
     }
+    
+    public static func algoGenerateSecretKey() -> String {
+       return AlgoSDK.AlgoSdkGenerateSK()?.base64EncodedString() ?? ""
+    }
+    
 }
